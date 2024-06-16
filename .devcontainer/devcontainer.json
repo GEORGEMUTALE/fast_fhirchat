@@ -1,0 +1,22 @@
+{
+  "name": "FastAPI Dev Container",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker"
+  ],
+  "postCreateCommand": "pip install -r requirements.txt",
+  "portsAttributes": {
+    "3000": {
+      "label": "FastAPI",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [3000],
+  "remoteUser": "vscode"
+}
+
